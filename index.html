@@ -1,257 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vikash Bhandari | Data Analyst</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-body{
-  background:navy;
-  color:white;
-}
-header{
-  position:sticky;
-  top:0;
-  background:#222e42;
-  padding:15px 10%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:100;
-}
-header h1{color:aqua;}
-nav ul{display:flex;gap:18px;list-style:none;}
-nav a{text-decoration:none;color:white;font-weight:500;}
-nav a:hover{color:aqua;}
+  <style>
+    /* Styling remains consistent with your original brand colors */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: navy; color: white; overflow-x: hidden; }
+    header { position: sticky; top: 0; background: #222e42; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; z-index: 100; animation: slideDown 1s ease-in-out; }
+    header h1 { font-size: 24px; color: #38bdf8; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { text-decoration: none; color: #efefef; transition: color 0.3s; }
+    nav ul li a:hover { color: #38bdf8; }
+    
+    #Home { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center; padding: 60px 10%; animation: fadeIn 2s ease-in; }
+    .home-left img { width: 250px; height: 250px; border-radius: 50%; animation: zoomIn 2s ease-in-out; border: 4px solid #38bdf8; }
+    .home-right { max-width: 600px; margin-top: 20px; }
+    .home-h1 { font-size: 3rem; color: aqua; animation: textFade 2s ease-in-out; }
+    .home-h6 { font-size: 1.5rem; margin-top: 10px; color: #38bdf8; }
+    .home-para { font-weight: 500; font-size: 1.1rem; margin-top: 20px; line-height: 1.5; }
 
-section{padding:60px 10%;}
+    #about, #skills, .projects, #contact { padding: 60px 10%; animation: fadeIn 2s ease-in; }
+    .about-h2, .skills-h2, .projects-h2, .contact-h2 { color: aqua; font-size: 2rem; margin-bottom: 20px; border-bottom: 2px solid #38bdf8; display: inline-block; }
+    .about-para { font-weight: 500; font-size: 1.1rem; margin-bottom: 40px; }
 
-#home{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-#home img{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  margin-bottom:20px;
-}
-.home-h1{font-size:2.8rem;color:aqua;}
-.home-h4{font-size:1.4rem;}
-.home-para{margin-top:20px;font-size:1.1rem;line-height:1.6;}
+    #btn, .skills-tag { background-color: #38bdf8; color: black; font-size: 1rem; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; margin: 5px; }
+    #btn:hover, .skills-tag:hover { transform: translateY(-3px); background-color: aqua; }
 
-h2{color:aqua;margin-bottom:20px;}
+    .project-card { border: 2px solid #38bdf8; box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.2); padding: 25px; margin: 20px 0; border-radius: 10px; transition: transform 0.3s ease; background: rgba(34, 46, 66, 0.5); }
+    .project-card:hover { transform: scale(1.02); }
+    .project-card h3 { color: aquamarine; font-size: 1.5rem; margin-bottom: 10px; }
+    .project-card p { font-size: 1rem; line-height: 1.6; }
+    .tech-stack { font-size: 0.9rem; color: #38bdf8; margin-top: 10px; font-weight: bold; }
 
-.btn{
-  background:aqua;
-  color:black;
-  padding:10px 22px;
-  border:none;
-  border-radius:6px;
-  font-weight:bold;
-  cursor:pointer;
-}
+    .contact-link { font-size: 1.1rem; margin-top: 10px; }
+    #contact-link { color: aqua; text-decoration: none; }
+    footer { background-color: #222e42; color: white; text-align: center; padding: 20px; border-top: 2px solid #38bdf8; }
 
-.skill-box button{
-  margin:8px;
-  padding:10px 18px;
-  border:none;
-  background:#38bdf8;
-  border-radius:6px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.card{
-  border:2px solid black;
-  box-shadow:5px 5px 10px aqua;
-  padding:20px;
-  border-radius:12px;
-  margin:20px 0;
-}
-
-.cert-list a{
-  display:block;
-  padding:12px;
-  margin:10px 0;
-  background:#38bdf8;
-  color:black;
-  text-decoration:none;
-  font-weight:600;
-  border-radius:8px;
-  transition:transform .3s, background .3s;
-}
-.cert-list a:hover{
-  transform:translateX(8px);
-  background:aqua;
-}
-#contact{
-    font-weight: bolder;
-}
-#contact a{
-    text-decoration: none;
-    list-style: none;
-    color: white;
-    font-weight: bolder;
-
-}
-#projects a{
-    text-decoration: none;
-    color: red;
-}
-
-footer{
-  background:aqua;
-  color:black;
-  text-align:center;
-  padding:15px;
-  font-weight:bold;
-}
-@media(max-width:768px){
-  header{flex-direction:column;}
-  nav ul{flex-wrap:wrap;justify-content:center;}
-}
-</style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideDown { from { transform: translateY(-100px); } to { transform: translateY(0); } }
+    @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1>Vikash's Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <h1>Vikash Bhandari</h1>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#internship">Internship</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <section id="Home">
+    <div class="home-left">
+      <img src="https://github.com/vikash-2k25/demmo/blob/main/vikAsh.png?raw=true" alt="Vikash" />
+    </div>
+    <div class="home-right">
+      <h1 class="home-h1">Hi, I'm Vikash</h1>
+      <h4 class="home-h6">Data Analyst</h4>
+      <p class="home-para">
+         Detail-oriented Data Analyst with end-to-end experience in Data Mining, Statistical Analysis, and Business Intelligence. I specialize in converting raw datasets into actionable insights using PostgreSQL, Python, and Power BI.
+      </p>
+    </div>
+  </section>
 
-<section id="home">
-  <img src="https://github.com/vikash-2k25/Vikash-Bhandari/blob/main/vikAsh.png?raw=true">
-  <div>
-    <h1 class="home-h1">Hi, I'm Vikash</h1>
-    <h4 class="home-h4">Data Analyst</h4>
-    <p class="home-para">
-      Analytical and detail-focused Data Analyst with practical knowledge of Python, MySQL,
-      Power BI, and data visualization. Skilled in EDA and transforming data into insights.
+  <section id="about">
+    <h2 class="about-h2">Professional Summary</h2>
+    <p class="about-para">
+      I am a BCA graduate from Dr. Bhimrao Ambedkar University (CGPA: 8.0) with a passion for Exploratory Data Analysis (EDA) and KPI-driven dashboarding. [cite: 35, 36] Having interned at CodeAlpha as a Data Analytics Intern, I have hands-on experience in cleaning complex data and building reporting structures that drive business value.
     </p>
-  </div>
-</section>
+    <a href="https://drive.google.com/file/d/1ORpL5ejLi9hdbtYYQBflyGuHQdnBO5LN/view?usp=sharing" id="btn">See Resume</a>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    BCA student with hands-on experience in Data Analytics and Web Development.
-    Passionate about data-driven decision making and dashboard creation.
-  </p><br>
-  <a href="https://drive.google.com/file/d/13mxLlB_1hdjETL0cGcieBBLC1GO4LS5K/view?usp=sharing" target="_blank">
-    <button class="btn">Download Resume</button>
-  </a>
-</section>
+  <section id="skills">
+    <h2 class="skills-h2">Technical Toolkit</h2>
+    <div>
+      <span class="skills-tag">Python (Pandas, NumPy , Matplotlib , Seaborn)</span>
+      <span class="skills-tag">SQL & PostgreSQL</span>
+      <span class="skills-tag">Power BI</span>
+      <span class="skills-tag">Excel (VLOOKUP, Pivot)</span>
+      <span class="skills-tag">EDA</span>
+      <span class="skills-tag">Statistical Analysis</span>
+      <span class="skills-tag">Data Modeling</span>
+      <span class="skills-tag">KPI Reporting</span>
+    </div>
+  </section>
 
-<section id="skills">
-  <h2>Technical Skills</h2>
-  <div class="skill-box">
-    <button>Python</button>
-    <button>MySQL</button>
-    <button>Microsoft Power BI</button>
-    <button>Excel</button>
-    <button>Pandas</button>
-    <button>NumPy</button>
-    <button>Matplotlib</button>
-    <button>Seaborn</button>
-    <button>Web Development</button>
+  <section id="projects" class="projects">
+    <h2 class="projects-h2">Key Projects</h2>
     
-  </div>
-</section>
+    <div class="project-card">
+      <h3>Healthcare Data Analysis</h3>
+      <p> Cleaned patient records and cost patterns using SQL and Python. Developed a comprehensive KPI dashboard in Power BI to visualize healthcare trends.</p>
+      <p class="tech-stack">PostgreSQL | Python | Power BI</p>
+    </div>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card">
-    <h3>Exploratory Data Analysis (EDA)</h3>
-    <p>Data cleaning, EDA, and visualization using Python libraries.</p>
-    <a href="https://github.com/vikash-2k25/CodeAlpha_Exploratory-Data-Analysis-EDA-" target="_blank">View Project</a>
-  </div>
+    <div class="project-card">
+      <h3>Zomato Restaurant Analysis</h3>
+      <p> Conducted EDA on pricing and ratings to identify delivery trends. Built an interactive Power BI dashboard to present business insights.</p>
+      <p class="tech-stack">Python | Pandas | Matplotlib | Power BI</p>
+    </div>
 
-  <div class="card">
-    <h3>Personal Portfolio</h3>
-    <p>Responsive portfolio website using HTML, CSS & JavaScript.</p>
-    <a href="https://vikash-2k25.github.io/Vikash-Bhandari/" target="_blank">Live Website</a>
-  </div>
-</section>
+    <div class="project-card">
+      <h3>HR Analytics Dashboard</h3>
+      <p>[Analyzed employee attrition and salary distribution using DAX queries and data modeling in Power BI.</p>
+      <p class="tech-stack">Power BI | DAX | PostgreSQL</p>
+    </div>
+  </section>
 
-<section id="internship">
-  <h2>Internship</h2>
-  <div class="card">
-    <h3>Data Analyst Intern – CodeAlpha</h3>
-    <p>Assisted in data cleaning, processing, and exploratory data analysis (EDA) using Python and Excel.
-Developed dashboards and visual reports to communicate insights effectively and supported business teams in
-understanding key performance metrics.</p>
-  </div>
-  <div class="card">
-    <h3>Web Developer Intern – HexSoftwares</h3>
-    <p> Uses HTML for structure, CSS for styling and layouts, and JavaScript for interactivity, animations, form
-validation, and dynamic content rendering. Emphasis is placed on responsive design, cross-browser
-compatibility, and user experience (UI/UX).</p>
-  </div>
-</section>
+  <section id="contact">
+    <h2 class="contact-h2">Let's Connect</h2>
+    <p class="contact-link"><strong>Location:</strong> Mathura, Uttar Pradesh </p>
+    <p class="contact-link"><strong>WhatsApp:</strong> +91 9259275873 </p>
+    <p class="contact-link"><strong>Email:</strong> <a href="mailto:vikashbhandari259@gmail.com" id="contact-link">vikashbhandari259@gmail.com</a></p>
+    <p class="contact-link"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vikash-bhandari" target="_blank" id="contact-link">vikash-bhandari</a> </p>
+    <p class="contact-link"><strong>GitHub:</strong> <a href="https://github.com/vikash-2k25" target="_blank" id="contact-link">vikash-2k25</a> </p>
+  </section>
 
-<section id="certifications">
-  <h2>Certifications</h2>
-  <div class="card cert-list">
-    <a href="https://drive.google.com/file/d/1qeBuk8GkWAPjPPMR27uQUG2ZV8AfZMiG/view" target="_blank">
-      📜 Data Analytics Internship – CodeAlpha
-    </a>
-    <a href="https://drive.google.com/file/d/1VICOZ_LIwwHWZ-1W7MMSrdExOxM1YURN/view" target="_blank">
-      📜 Web Development Internship – HexSoftwares
-    </a>
-    <a href="https://drive.google.com/file/d/1JDKn9qKZnE-DcqGVyxUvTgHXcNksy9sL/view" target="_blank">
-      📜 Ultimate Web Development – Udemy
-    </a>
-    <a href="https://drive.google.com/file/d/1bB7SXQh2KKO11H74fmooj49Dm9yzWa6N/view?usp=sharing" target="_blank">
-      📜 O Level – NIELIT
-    </a>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📞 +91 9259275873</p>
-  <p>📧 vikashbhandari259@gmail.com</p>
-  <p>🔗 <a href="https://linkedin.com/in/vikash-bhandari" target="_blank">LinkedIn => linkedin.com/in/vikash-bhandari/</a></p>
-  <p>💻 <a href="https://github.com/vikash-2k25" target="_blank">GitHub => github.com/vikash-2k25</a></p>
-</section>
-
-<footer>
-  | Vikash Bhandari | Data Analyst  |
-</footer>
-
-<script>
-// simple smooth scroll
-document.querySelectorAll('nav a').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href'))
-      .scrollIntoView({behavior:'smooth'});
-  });
-});
-</script>
-
+  <footer>
+    <p>Vikash Bhandari © 2026 | Data Analyst Portfolio</p>
+  </footer>
 </body>
 </html>
