@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikash | Data Analyst Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; scroll-behavior: smooth; }
+    body { background: navy; color: white; overflow-x: hidden; }
+
+    /* Header & Navigation */
+    header { 
+      position: sticky; 
+      top: 0; 
+      background: #222e42; 
+      padding: 15px 10%; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      z-index: 1000; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: 24px; color: #38bdf8; }
+
+    /* Desktop Nav */
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav ul li a { text-decoration: none; color: #efefef; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #38bdf8; }
+
+    /* Mobile Menu Toggle (Hamburger) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #38bdf8;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    /* Sections General Styling */
+    section { padding: 80px 10%; animation: fadeIn 1.5s ease-in-out; }
+    
+    /* Home Section */
+    #Home { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center; gap: 40px; min-height: 90vh; }
+    .home-left img { width: 280px; height: 280px; border-radius: 50%; border: 5px solid #38bdf8; object-fit: cover; box-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+    .home-right { max-width: 600px; }
+    .home-h1 { font-size: 3.5rem; color: aqua; }
+    .home-h6 { font-size: 1.6rem; color: #38bdf8; margin-top: 10px; }
+    .home-para { margin-top: 20px; font-size: 1.1rem; line-height: 1.6; color: #ddd; }
+
+    /* Utility Classes */
+    .section-title { color: aqua; font-size: 2.2rem; margin-bottom: 25px; border-bottom: 3px solid #38bdf8; display: inline-block; }
+    #btn { background-color: #38bdf8; color: black; font-weight: bold; padding: 12px 25px; border-radius: 5px; text-decoration: none; display: inline-block; transition: 0.3s; margin-top: 20px; }
+    #btn:hover { background-color: aqua; transform: translateY(-3px); }
+
+    /* Skills */
+    .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skills-tag { background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: white; padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; transition: 0.3s; }
+    .skills-tag:hover { background: #38bdf8; color: black; }
+
+    /* Project Cards */
+    .project-card { background: rgba(34, 46, 66, 0.6); border: 1px solid #38bdf8; padding: 25px; border-radius: 12px; margin-bottom: 25px; transition: 0.3s; }
+    .project-card:hover { transform: translateY(-5px); background: rgba(34, 46, 66, 0.9); }
+    .project-card h3 { color: aquamarine; margin-bottom: 10px; }
+    .tech-stack { color: #38bdf8; font-weight: bold; margin-top: 15px; font-size: 0.85rem; }
+
+    /* Contact */
+    .contact-info { font-size: 1.1rem; margin-bottom: 15px; }
+    .contact-info a { color: aqua; text-decoration: none; }
+
+    /* Footer */
+    footer { text-align: center; padding: 30px; background: #222e42; border-top: 2px solid #38bdf8; }
+
+    /* --- RESPONSIVE DESIGN (Mobiles) --- */
+    @media (max-width: 768px) {
+      header { padding: 15px 5%; }
+      .menu-toggle { display: flex; } /* Show Hamburger */
+
+      nav ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #222e42;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 3px solid #38bdf8;
+      }
+
+      nav ul.active { display: flex; } /* Show when toggled */
+
+      #Home { flex-direction: column; padding: 40px 5%; }
+      .home-h1 { font-size: 2.5rem; }
+      .home-left img { width: 200px; height: 200px; }
+      
+      section { padding: 60px 5%; }
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Vikash's Portfolio</h1>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul id="nav-list">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="Home">
+    <div class="home-left">
+      <img src="https://github.com/vikash-2k25/demmo/blob/main/vikAsh.png?raw=true" alt="Vikash" />
+    </div>
+    <div class="home-right">
+      <h1 class="home-h1">Hi, I'm Vikash</h1>
+      <h4 class="home-h6">Data Analyst</h4>
+      <p class="home-para">
+         Detail-oriented Data Analyst specializing in converting raw datasets into actionable insights using PostgreSQL, Python, and Power BI.
+      </p>
+      <a href="#projects" id="btn">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">Professional Summary</h2>
+    <p style="line-height: 1.8; color: #ddd;">
+      Results-driven Data Analyst with hands-on experience in the complete data analytics lifecycle. Proficient in PostgreSQL, Python (Pandas, NumPy, Matplotlib), and Power BI. Experienced in transforming raw datasets into actionable insights through EDA, KPI dashboard development, and data-driven storytelling across healthcare, HR, and e-commerce domains.
+    </p>
+    <a href="https://drive.google.com/file/d/1ORpL5ejLi9hdbtYYQBflyGuHQdnBO5LN/view?usp=sharing" target="_blank" id="btn">Download CV</a>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Toolkit</h2>
+    <div class="skills-container">
+      <span class="skills-tag">Python (Pandas, NumPy, Seaborn, Matplotlib)</span>
+      <span class="skills-tag">SQL & PostgreSQL</span>
+      <span class="skills-tag">Power BI(Power Query, DAX Queries)</span>
+      <span class="skills-tag">Excel (VLOOKUP, Pivot Table)</span>
+      <span class="skills-tag">Exploratory Data Analysis (EDA)</span>
+      <span class="skills-tag">Statistical Analysis</span>
+      <span class="skills-tag">Data Modeling</span>
+      <span class="skills-tag">KPI Reporting</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Key Projects</h2>
+    
+    <div class="project-card">
+      <h3>Healthcare Data Analysis</h3>
+      <p>Cleaned patient records and cost patterns using SQL and Python. Developed a comprehensive KPI dashboard in Power BI to visualize healthcare trends.</p>
+      <p class="tech-stack">PostgreSQL | Python | Power BI</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Zomato Restaurant Analysis</h3>
+      <p>Conducted EDA on pricing and ratings to identify delivery trends. Built an interactive Power BI dashboard to present business insights.</p>
+      <p class="tech-stack">Python | Pandas | Matplotlib | Power BI</p>
+    </div>
+
+    <div class="project-card">
+      <h3>HR Analytics Dashboard</h3>
+      <p>Analyzed employee attrition and salary distribution using DAX queries and data modeling in Power BI.</p>
+      <p class="tech-stack">Power BI | DAX | PostgreSQL</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-info"><strong>📍 Location:</strong> Mathura, Uttar Pradesh</div>
+    <div class="contact-info"><strong>📱 WhatsApp:</strong> +91 9259275873</div>
+    <div class="contact-info"><strong>✉️ Email:</strong> <a href="mailto:vikashbhandari259@gmail.com">vikashbhandari259@gmail.com</a></div>
+    <div class="contact-info"><strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/in/vikash-bhandari" target="_blank">vikash-bhandari</a></div>
+    <div class="contact-info"><strong>💻 GitHub:</strong> <a href="https://github.com/vikash-2k25" target="_blank">vikash-2k25</a></div>
+  </section>
+
+  <footer>
+    <p>Vikash Bhandari © 2026 | Data Analyst Portfolio</p>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle Logic
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link (Mobile optimization)
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
